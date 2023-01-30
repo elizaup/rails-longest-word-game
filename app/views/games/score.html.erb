@@ -1,0 +1,13 @@
+<h1> See your result! 🎉 </h1>
+
+<% if @included %>
+  <% if @valid_word %>
+    <p> Congratulations! 🏆 <%= @word %> is a correct word! </p>
+  <% else %>
+    <p> Sorry but <%= @word %> is not a valid English word! </p>
+  <% end %>
+<% else %>
+  <p> Sorry 😢 but <%= @word %> has to be built out of these <%= @letters.join(" ") %></p>
+<% end %>
+
+<%= link_to "Re-start the game", new_path %>
